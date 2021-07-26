@@ -1,0 +1,24 @@
+{
+  "anime": [
+    {
+      "title": "Tokio Ghul ",
+      "genre": "Horror",
+      "id": 4
+    },
+    {
+      "title": "Death note",
+      "genre": "Action",
+      "id": 5
+    },
+    {
+      "title": "Alice in Borderland ",
+      "genre": "Action",
+      "id": 6
+    },
+    {
+      "title": "Blue Lock",
+      "genre": "Sportivo",
+      "id": 8
+    }
+  ]
+}

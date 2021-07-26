@@ -1,0 +1,52 @@
+<div class="container">
+    <h1 class="mt-3 mb-3">La tua lista Manga:</h1>
+    <form #mangaForm="ngForm" (ngSubmit)="onSubmit(mangaForm)">
+    <div class="form-group">
+      <label for="name">Nome</label>
+      <input type="text" class="form-control" id="nome" #nome="ngModel" [(ngModel)]="manga.nome"
+      name="nome" required>
+        <div [hidden]="nome.valid" class="alert alert-danger">
+         Name è richiesto
+        </div>
+    </div>
+
+    <div class="form-group">
+      <label for="name">Note</label>
+      <textarea class="form-control" [(ngModel)]="manga.note" name="note" 
+        id="note" rows="3" name="note" required></textarea>
+    </div>
+
+    <div class="form-group">
+      <label for="name">Pagine</label>
+      <input type="number" class="form-control" id="pages" [(ngModel)]="manga.pages" 
+      min="1" name="pages" required >
+     <!--  <div [hidden]="pages.valid" || nome.pristine class="alert alert-danger">
+        Numero pagina è richiesto
+      </div> -->
+    </div>
+
+    <div class="form-group">
+      <label for="name">Capitolo</label>
+      <input type="number" class="form-control" id="chapter" #chapter="ngModel" [(ngModel)]="manga.chapter"
+      min="1" name="chapter" required >
+      <!-- <div [hidden]="chapter.valid" || nome.pristine class="alert alert-danger">
+        Numero Capitolo è richiesto
+      </div> -->
+    </div>
+
+    <div class="form-group">
+      <label for="name">Segnalibro</label>
+      <input type="number" class="form-control" id="segnalibro" #currentPage="ngModel" [(ngModel)]="manga.currentPage"
+      min="1" name="currentPage" required >
+    </div> 
+
+    <div class="form-group">
+      <label for="name">Immagine</label>
+      <input type="file" class="form-control mt-3" id="immagine" (change)="readUrl($event)">
+      <img *ngIf="manga.img" [src]="manga.img" class="img-thumbnail" alt="img" width="200">
+    </div>
+    
+    <button type="submit" class="btn btn-danger mt-3" [disabled]="!mangaForm.form.valid">Submit</button>
+    </form>
+    
+  </div>
